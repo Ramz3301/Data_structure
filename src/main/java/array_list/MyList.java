@@ -1,10 +1,12 @@
 package array_list;
 
-public interface MyInterface<T> extends Iterable<T> {
+public interface MyList<T> extends Iterable<T> {
 
     boolean add(T t);
 
-    T delete(int index);
+    boolean add(int index, T t);
+
+    T remove(int index);
 
     T get(int index);
 

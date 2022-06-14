@@ -1,16 +1,18 @@
 import array_list.MyArrayList;
 
-import java.util.ArrayList;
-
 public class Main {
 
     public static void main(String[] args) {
-        ArrayList<Integer> list = new ArrayList<>();
-        list.add(10);
-        System.out.println(list.remove(0));
-
         MyArrayList<Integer> myList = new MyArrayList<>();
-        myList.delete(10);
+        myList.add(0);
+        myList.add(1);
+        myList.add(2);
+        myList.add(0, 100);
+
+        System.out.println(myList.get(0));
+        System.out.println(myList.get(1));
+        System.out.println(myList.get(2));
+        System.out.println(myList.get(3));
     }
 
 }
