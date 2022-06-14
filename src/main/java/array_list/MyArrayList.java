@@ -5,22 +5,41 @@ import java.util.Iterator;
 public class MyArrayList<T> implements MyInterface<T> {
 
     private T[] objects;
-    private int size;
+
     private int index;
 
     public MyArrayList() {
-        objects = (T[]) new Object();
+        objects = (T[]) new Object[0];
+    }
+
+    public MyArrayList(int size) {
+        objects = (T[]) new Object[size];
     }
 
     @Override
-    public void add(T t) {
+    public boolean add(T t) {
+        try {
+            T[] tempArray = objects;
+            objects = (T[]) new Object[tempArray.length + 1];
+            System.arraycopy(tempArray, 0, objects, 0, tempArray.length);
+            objects[objects.length - 1] = t;
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-
+        return false;
     }
 
     @Override
     public T delete(int index) {
-        return null;
+        T oldElement = objects[index];
+        T[] tempArray = objects;
+        objects = (T[]) new Object[objects.length - 1];
+        System.arraycopy(tempArray, 0, objects, 0, index);
+        int amountElementsAfterIndex = tempArray.length - 1 - index;
+        System.arraycopy(tempArray, index, objects, index, amountElementsAfterIndex);
+        return oldElement;
     }
 
     @Override
@@ -35,7 +54,7 @@ public class MyArrayList<T> implements MyInterface<T> {
 
     @Override
     public int size() {
-        return objects.length; //todo
+        return objects.length;
     }
 
     @Override

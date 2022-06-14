@@ -2,7 +2,7 @@ package array_list;
 
 public interface MyInterface<T> extends Iterable<T> {
 
-    void add(T t);
+    boolean add(T t);
 
     T delete(int index);
 
