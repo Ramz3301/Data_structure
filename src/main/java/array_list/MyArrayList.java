@@ -1,5 +1,6 @@
 package array_list;
 
+import java.util.Arrays;
 import java.util.Iterator;
 
 public class MyArrayList<T> implements MyList<T> {
@@ -92,5 +93,21 @@ public class MyArrayList<T> implements MyList<T> {
         for (int i = 0; i < size; i++) {
             objects[i] = null;
         }
+    }
+
+    @Override
+    public String toString() {
+        T[] temp = (T[]) new Object[size];
+        System.arraycopy(objects, 0, temp, 0, size);
+        return Arrays.toString(temp);
+    }
+
+    public boolean contains(T element) {
+        for (int i = 0; i < size; i++) {
+           if (objects[i].equals(element)) {
+               return true;
+           }
+        }
+        return false;
     }
 }

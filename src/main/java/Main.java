@@ -9,12 +9,10 @@ public class Main {
         MyArrayList<Integer> list = new MyArrayList<>();
         list.add(10);
         list.add(20);
+        list.add(230);
 
 
-//        ArrayList<Integer> list1 = new ArrayList<>();
-//        list1.add(10);
-//        list1.add(20);
-
+        System.out.println(list.contains(230));
     }
 
 }
