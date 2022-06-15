@@ -96,10 +96,20 @@ public class MyArrayList<T> implements MyList<T> {
     /**
      * Remove element in list by index.
      * @param index
-     * @return
+     * @return Element which we removed
+     * @throws IndexOutOfBoundsException - if index less than zero or bigger than size
      */
     @Override
     public T remove(int index) {
+
+        if (index < 0) {
+            throw new IndexOutOfBoundsException("Try to remove negative element of array");
+        }
+
+        if (index >= size) {
+            throw new IndexOutOfBoundsException("Index bigger than size of array");
+        }
+
         T oldElement = objects[index];
         objects[index] = null;
         int numMoved = objects.length - index - 1;
@@ -150,6 +160,7 @@ public class MyArrayList<T> implements MyList<T> {
     public Iterator<T> iterator() {
         return new MyIterator<T>(objects);
     }
+
 
     /**
      * @return {@code true}  if MyArrayList have no elements or

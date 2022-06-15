@@ -1,13 +1,14 @@
 package array_list;
 
 /**
- *
+ * Class contains method for quick sorting MyArrayList.
+ * @see MyArrayList
  */
-public  class MyArrays {
+public class MyArrays {
     /**
-     *
+     * Method for quick sorting MyArrayList.
      * @param array
-     * @return
+     * @return MyArrayList<T>
      * @param <T>
      */
     public static  <T extends Comparable<T>> MyArrayList<T> quicksort(MyArrayList<T> array) {
