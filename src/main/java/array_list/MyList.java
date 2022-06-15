@@ -10,7 +10,9 @@ public interface MyList<T> extends Iterable<T> {
 
     T get(int index);
 
-    void update(int index, T t);
+    void set(int index, T t);
 
     int size();
+
+    boolean isEmpty();
 }

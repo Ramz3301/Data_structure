@@ -5,14 +5,17 @@ import java.util.Iterator;
 public class MyArrayList<T> implements MyList<T> {
 
     private T[] objects;
-    private static final int DEFAULT_CAPACITY = 10;
-    private int size;
+    private static final int DEFAULT_CAPACITY = 10; // при создании без указания кол-ва элементов, будет 10 по умолчанию
+    private int size; // поле счётчик
 
     public MyArrayList() {
         objects = (T[]) new Object[DEFAULT_CAPACITY];
     }
 
     public MyArrayList(int capacity) {
+        if (capacity < 0) {
+            throw new IllegalArgumentException("Negative number for MyArrayList capacity");
+        }
         objects = (T[]) new Object[capacity];
     }
 
@@ -58,11 +61,15 @@ public class MyArrayList<T> implements MyList<T> {
 
     @Override
     public T get(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException();
+        }
+
         return objects[index];
     }
 
     @Override
-    public void update(int index, T t) {
+    public void set(int index, T t) {
         objects[index] = t;
     }
 
@@ -76,4 +83,14 @@ public class MyArrayList<T> implements MyList<T> {
         return new MyIterator<T>(objects);
     }
 
+    @Override
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
+    public void clear() {
+        for (int i = 0; i < size; i++) {
+            objects[i] = null;
+        }
+    }
 }

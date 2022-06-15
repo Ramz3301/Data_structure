@@ -1,18 +1,20 @@
 import array_list.MyArrayList;
 
+import java.util.ArrayList;
+
+
 public class Main {
 
     public static void main(String[] args) {
-        MyArrayList<Integer> myList = new MyArrayList<>();
-        myList.add(0);
-        myList.add(1);
-        myList.add(2);
-        myList.add(0, 100);
+        MyArrayList<Integer> list = new MyArrayList<>();
+        list.add(10);
+        list.add(20);
 
-        System.out.println(myList.get(0));
-        System.out.println(myList.get(1));
-        System.out.println(myList.get(2));
-        System.out.println(myList.get(3));
+
+//        ArrayList<Integer> list1 = new ArrayList<>();
+//        list1.add(10);
+//        list1.add(20);
+
     }
 
 }
