@@ -1,6 +1,15 @@
 package array_list;
 
+/**
+ *
+ */
 public  class MyArrays {
+    /**
+     *
+     * @param array
+     * @return
+     * @param <T>
+     */
     public static  <T extends Comparable<T>> MyArrayList<T> quicksort(MyArrayList<T> array) {
         if (array.size() < 2) {
             return array;

@@ -1,5 +1,9 @@
 package array_list;
 
+/**
+ *
+ * @param <T>
+ */
 public interface MyList<T> extends Iterable<T> {
 
     boolean add(T t);
