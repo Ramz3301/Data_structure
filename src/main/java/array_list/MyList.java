@@ -15,4 +15,6 @@ public interface MyList<T> extends Iterable<T> {
     int size();
 
     boolean isEmpty();
+
+    boolean contains(T element);
 }
