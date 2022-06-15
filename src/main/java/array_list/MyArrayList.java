@@ -1,6 +1,7 @@
 package array_list;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Iterator;
 
 public class MyArrayList<T> implements MyList<T> {
@@ -104,11 +105,29 @@ public class MyArrayList<T> implements MyList<T> {
 
     public boolean contains(T element) {
         for (int i = 0; i < size; i++) {
-           if (objects[i].equals(element)) {
-               return true;
-           }
+            if (objects[i].equals(element)) {
+                return true;
+            }
         }
         return false;
     }
 
+
+//    public boolean addAll(Collection<? extends T> collection) {
+//        if (collection.size() == 0) {
+//            return false;
+//        }
+//
+//        Object[] a = collection.toArray();
+//        int numNew = a.length;
+//
+//        Object[] objects = this.objects;
+//
+//        if (numNew > (objects.length - size)) {
+//            objects = (T[]) new Object[size + numNew];
+//        }
+//        System.arraycopy(a, 0, objects, numNew, a.length);
+//        size = size + numNew;
+//        return true;
+//    }
 }
