@@ -53,7 +53,7 @@ public class MyArrayList<T> implements MyList<T> {
      * <br>
      * If this element added to full busy list, list grows.
      * @param t element to be appended to list
-     * @return {@code true}
+     * @return {@code true} if element added
      */
     @Override
     public boolean add(T t) {
@@ -73,7 +73,7 @@ public class MyArrayList<T> implements MyList<T> {
      *  If this element added to full busy list, list grows.
      * @param index
      * @param t
-     * @return
+     * @return {@code true} if element added
      */
     @Override
     public boolean add(int index, T t) {
@@ -196,7 +196,7 @@ public class MyArrayList<T> implements MyList<T> {
     /**
      * Method for checking element in MyArrayList.
      * @param element
-     * @return {@code true} if list contains it's element
+     * @return {@code true} if list contains it element
      * and {@code false} if not.
      */
     public boolean contains(T element) {
