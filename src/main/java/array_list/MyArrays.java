@@ -11,7 +11,7 @@ public class MyArrays {
      * @return MyArrayList<T>
      * @param <T>
      */
-    public static  <T extends Comparable<T>> MyArrayList<T> quicksort(MyArrayList<T> array) {
+    public static <T extends Comparable<T>> MyArrayList<T> quicksort(MyArrayList<T> array) {
         if (array.size() < 2) {
             return array;
         }
@@ -19,7 +19,7 @@ public class MyArrays {
         MyArrayList<T> sorted;
         MyArrayList<T> lesser = new MyArrayList<>();
         MyArrayList<T> greater = new MyArrayList<>();
-        T pivot = array.get(array.size() - 1); // получение последнего элемента
+        T pivot = array.get(array.size() - 1);
 
         for (int i = 0; i < array.size() - 1; i++) {
             if (array.get(i).compareTo(pivot) < 0) {
